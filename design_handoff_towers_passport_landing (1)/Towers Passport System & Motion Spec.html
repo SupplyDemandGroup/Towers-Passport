@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Towers Passport — Palette, Type & Motion Specification</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tp.css">
+<style>
+  body{ padding-bottom:0 !important }
+  .doc{ padding:64px 0 96px }
+  .doc section{ padding:56px 0; border-top:1px solid var(--line) }
+  .doc h2{ font-size:clamp(28px,3.4vw,44px); margin-bottom:24px }
+  .doc h3{ font-size:20px; margin:28px 0 10px }
+  .doc p, .doc li{ color:var(--text-2); font-size:15px; max-width:72ch }
+  .sw{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px }
+  .sw div{ border:1px solid var(--line); border-radius:4px; overflow:hidden; background:var(--azure) }
+  .sw i{ display:block; height:96px }
+  .sw span{ display:block; padding:10px 12px 12px; font-family:var(--f-mono); font-size:11px; line-height:1.6; color:var(--text-2) }
+  .sw b{ display:block; font-family:var(--f-display); font-size:15px; color:var(--mist); font-weight:600 }
+  .grad{ height:56px; border-radius:4px; margin-top:16px; background:linear-gradient(90deg,#1A7CFF,#6CA7F9,#A8CBFD) }
+  .ramp{ height:56px; border-radius:4px; margin-top:8px; background:linear-gradient(90deg,#003070,#004AAD,#1A7CFF,#6CA7F9,#A8CBFD,#F4F7F8) }
+  .typeg{ display:grid; gap:28px }
+  .tspec{ display:grid; gap:10px; padding:20px 0; border-top:1px solid var(--line) }
+  .tspec .lbl{ font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--slate) }
+  table{ width:100%; border-collapse:collapse; font-size:14px }
+  th, td{ text-align:left; padding:12px 12px 12px 0; border-top:1px solid var(--line); vertical-align:top; color:var(--text-2) }
+  th{ font-family:var(--f-mono); font-weight:500; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--slate) }
+  td:first-child{ color:var(--mist); font-family:var(--f-display); font-weight:600; white-space:nowrap }
+  .mono-c{ font-family:var(--f-mono); font-size:12.5px }
+  .tablewrap{ overflow-x:auto } /* spec doc only — the landing page never scrolls tables */
+  .flag{ display:grid; grid-template-columns:44px 1fr; gap:14px; padding:16px 0; border-top:1px solid var(--line) }
+  .flag .k{ font-family:var(--f-mono); color:var(--yellow); font-size:13px }
+  .flag b{ color:var(--mist); font-weight:500 }
+  .rule-y{ display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-top:14px }
+  .chip{ font-family:var(--f-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; padding:6px 10px; border:1px solid var(--line); border-radius:999px }
+  .dirs{ display:grid; gap:16px } @media(min-width:900px){ .dirs{ grid-template-columns:1fr 1fr } }
+  .dir{ padding:22px; background:var(--panel); border:1px solid var(--line); border-radius:4px }
+  .dir.rec{ border-color:var(--surge) }
+  .dir .t{ font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; color:var(--slate); text-transform:uppercase }
+  .dir.rec .t b{ color:var(--yellow); font-weight:500 }
+</style>
+</head>
+<body>
+<div class="wrap doc">
+  <img src="assets/sb1-lockup-ondark.png" alt="ScanBuild1" style="height:56px;margin-bottom:36px">
+  <p class="eyebrow">Towers Passport · Implementation sheet</p>
+  <h1 style="font-size:clamp(36px,5vw,68px)">Palette, type and motion — <em class="y">without ambiguity.</em></h1>
+  <p class="lede">Companion to <a href="Towers Passport Landing.html" style="color:var(--ice)">Towers Passport Landing.html</a>. Visual identity status: working draft, pending approval. Items that would become permanent brand rules are flagged in §5.</p>
+
+  <section>
+    <p class="eyebrow"><b>01</b> · Colour</p>
+    <h2>A cobalt system, <em class="y">yellow as the scalpel.</em></h2>
+    <div class="sw">
+      <div><i style="background:#004AAD"></i><span><b>Cobalt Blue</b>#004AAD · brand voice. Selected states, answer row, H-level blue.</span></div>
+      <div><i style="background:#003070"></i><span><b>Deep Cobalt</b>#003070 · footer, CTA section base, ramp floor.</span></div>
+      <div><i style="background:#253238"></i><span><b>Azure Grey</b>#253238 · cards, panels, form surface (55–60% over ground).</span></div>
+      <div><i style="background:#5B7B8A"></i><span><b>Slate Steel</b>#5B7B8A · borders (32%), sources, inert labels.</span></div>
+      <div><i style="background:#1A7CFF"></i><span><b>Cobalt Surge</b>#1A7CFF · focus rings, live dot, scan bars, CAD lines.</span></div>
+      <div><i style="background:#6CA7F9"></i><span><b>Sky Current</b>#6CA7F9 · tech italic emphasis, outline type stroke, data.</span></div>
+      <div><i style="background:#A8CBFD"></i><span><b>Ice Veil</b>#A8CBFD · eyebrows, readouts, pointer highlight, scan plane.</span></div>
+      <div><i style="background:#F4F7F8"></i><span><b>Signal Mist</b>#F4F7F8 · primary text; crown of the captured twin.</span></div>
+      <div><i style="background:#F2CB07"></i><span><b>Accent Yellow</b>#F2CB07 · CTA, section number, one key metric per section, issue markers.</span></div>
+    </div>
+    <h3>Gradients</h3>
+    <p>Digitised geometry / data: Cobalt Surge → Sky Current → Ice Veil.</p>
+    <div class="grad"></div>
+    <p style="margin-top:16px">Point-cloud height ramp (base → crown): Deep Cobalt → Cobalt Blue → Cobalt Surge → Sky Current → Ice Veil → Signal Mist. FORM/BUILT stop at Ice Veil; only CAPTURED reaches Signal Mist.</p>
+    <div class="ramp"></div>
+    <h3>Role rule</h3>
+    <p>Blue = technology and data. Yellow = commercial meaning (a CTA, a result, a flagged issue, the active step). Never swap.</p>
+    <div class="rule-y"><span class="chip" style="color:var(--yellow);border-color:var(--yellow)">Yellow budget ≈ 1 per section</span><span class="chip">No magenta · no cyan · no gold-primary</span></div>
+  </section>
+
+  <section>
+    <p class="eyebrow"><b>02</b> · Typography</p>
+    <h2>Square, technical, <em class="b">and unapologetic.</em></h2>
+    <div class="typeg">
+      <div class="tspec"><span class="lbl">Display · Chakra Petch 600 / italic 500 · tight −0.01em · lh 1.0–1.05</span>
+        <div style="font-family:var(--f-display);font-weight:600;font-size:clamp(34px,5vw,64px);line-height:1.02">Your bank won't fund what your buyers <em style="color:var(--yellow);font-weight:500">can't see.</em></div>
+        <p>Chosen for its chamfered, squarish counters — the nearest open-licence relative of the wordmark's techno-geometric face. H1 40→92px fluid; H2 32→66px.</p></div>
+      <div class="tspec"><span class="lbl">Body · IBM Plex Sans 300/400 · 16px min · lh 1.6</span>
+        <p style="font-size:17px;color:var(--mist)">A photoreal, explorable 3D tower built from your architects' CAD and BIM — in any browser, tablet or display screen.</p></div>
+      <div class="tspec"><span class="lbl">Data / mono · IBM Plex Mono 400/500 · 10.5–12px · tracking .12–.18em uppercase</span>
+        <p class="eyebrow" style="margin:0"><b>01</b> · The problem</p></div>
+      <div class="tspec"><span class="lbl">Signature device · statement + italic emphasis</span>
+        <p>Yellow italic (<span style="color:var(--yellow);font-style:italic">em.y</span>) = commercial / emotional. Sky Current italic (<span style="color:var(--sky);font-style:italic">em.b</span>) = technology. Every H2 on the page uses one.</p></div>
+      <div class="tspec"><span class="lbl">Outline → solid · meaning, not decoration</span>
+        <div style="font-family:var(--f-display);font-weight:700;font-size:48px;display:flex;gap:28px;flex-wrap:wrap"><span class="outline">FORM</span><span class="half">BUILT</span><span class="solid">CAPTURED</span></div>
+        <p>Outline = not yet built (FORM, "before it exists", "sold"). Half-filled from the base = rising (BUILT). Solid = as-built (CAPTURED).</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow"><b>03</b> · Hero interaction · two directions</p>
+    <h2>Living point cloud — <em class="b">two ways to touch it.</em></h2>
+    <div class="dirs">
+      <div class="dir rec"><span class="t"><b>Recommended</b> · Direction A</span><h3>Displace</h3><p>Points within 150px (90px mobile) of the pointer push outward on a quadratic falloff (max 46px), brighten up to Ice Veil and grow slightly. The model "opens around the hand". Reads instantly under a thumb, costs nothing to understand, and works at 60fps on mid-range phones.</p></div>
+      <div class="dir"><span class="t">Direction B</span><h3>Focus lens</h3><p>Outside the lens the cloud softens (larger, dimmer points — "unresolved"). Inside, points sharpen, CAD slab lines resolve, and a mono label reads <span class="mono-c">LEVEL 18 · RESOLVED</span>. Stronger conceptually — "bringing the model into focus" — and the better desktop moment; less legible on a small touch target. Toggle in Tweaks.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow"><b>04</b> · Motion specification</p>
+    <h2>What moves, when, and <em class="b">how fast.</em></h2>
+    <div class="tablewrap"><table>
+      <tr><th>Element</th><th>Trigger</th><th>Behaviour</th><th>Timing / easing</th><th>Reduced motion / no JS</th></tr>
+      <tr><td>Hero cloud</td><td>Load; continuous while in view</td><td>15k points desktop / 7k mobile (≈−50%). Y-rotation 0.12 rad/s; pointer adds ±0.35 rad yaw. DPR capped at 2. Paused off-screen via IntersectionObserver.</td><td class="mono-c">rotation linear · pointer lerp 0.14/frame · presence lerp 0.06</td><td>Static key image (presentation p.1), labelled illustrative</td></tr>
+      <tr><td>Capture sweep</td><td>Loop</td><td>Horizontal scan plane rises base→crown, brightening points within ±0.03 height. Yellow issue markers appear only once swept.</td><td class="mono-c">period ≈ 7.8s · linear</td><td>—</td></tr>
+      <tr><td>Pointer aura</td><td>Pointer / touch</td><td>Radial glow Cobalt Surge 10→20% → Cobalt Blue 6% → transparent, follows pointer; returns to tower centre on leave.</td><td class="mono-c">lerp 0.14 · fade 0.06</td><td>Static CSS radial glow</td></tr>
+      <tr><td>Spatial story</td><td>Scroll (420vh pinned track)</td><td>0–0.34 FORM: CAD slabs draw up from the base, corner edges, mullions, dimension string L00–L30. 0.30–0.40 cross-fade to points. 0.36–0.64 BUILT: 50% point subset revealed by rising scan plane; design ghost lines persist at 22% for comparison; 5 yellow issues FLAGGED → CONFIRMED with leader-line labels. 0.68–0.86 CAPTURED: interior plates + services + full density; ramp extends to Signal Mist; issues RECORDED. Camera yaw −0.62→+0.38 rad across the whole scroll — one continuous arc, one asset.</td><td class="mono-c">progress lerp 0.12/frame · smoothstep per phase</td><td>Static three-stage image + all three stage descriptions visible</td></tr>
+      <tr><td>Stage tabs</td><td>Scroll; tap</td><td>Active stage label turns yellow, its 2px bar fills with local progress. Tap jumps scroll to stage midpoint.</td><td class="mono-c">smooth scroll · native</td><td>All three shown, no bars</td></tr>
+      <tr><td>Readouts</td><td>Live</td><td>Mono corner panels: mode, source, points, issues, model ID.</td><td class="mono-c">hero 2 Hz · story per frame</td><td>Hidden</td></tr>
+      <tr><td>Progress rail</td><td>Scroll</td><td>2px top bar, Cobalt → Surge → Sky → Ice, scaleX = page progress.</td><td class="mono-c">direct</td><td>Present, static update</td></tr>
+      <tr><td>Nav</td><td>Scroll &gt; 24px</td><td>Transparent → 78% ground + 14px blur + hairline.</td><td class="mono-c">0.3s</td><td>Instant</td></tr>
+      <tr><td>Sticky CTA (mobile)</td><td>Hero bottom &lt; 80px; hidden while form visible</td><td>Slides up from bottom; body gains 76px bottom padding so nothing is covered.</td><td class="mono-c">0.4s cubic-bezier(.16,1,.3,1)</td><td>Instant</td></tr>
+      <tr><td>Payment layers</td><td>35% in view, once</td><td>Underline bars draw left→right in sequence (Surge, Surge, Yellow). Content itself never hidden.</td><td class="mono-c">1s ease-out · 0 / 250 / 500ms stagger</td><td>Bars drawn</td></tr>
+      <tr><td>Tower class</td><td>Tap Boutique / Mid / High</td><td>Selected column highlights; layer amounts, months and fee-mix bar update.</td><td class="mono-c">bar 0.7s ease-out</td><td>No JS: all three class cards shown stacked</td></tr>
+      <tr><td>Hover</td><td>Pointer</td><td>Primary CTA lifts 1px with yellow glow, arrow nudges 3px. Program card image scales 1.04 over 1.2s.</td><td class="mono-c">0.25s / 1.2s ease-out</td><td>Colour change only</td></tr>
+    </table></div>
+    <p style="margin-top:18px">Guard rails: <code class="mono-c">html.motion</code> is added only when JS runs, canvas is supported and <code class="mono-c">prefers-reduced-motion</code> is not set. Every motion style is scoped to it, so the default HTML — and any link preview or screenshot — is the complete page.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow"><b>05</b> · Delivery notes · flagged for brand review</p>
+    <h2>Judgement calls that could <em class="y">become rules.</em></h2>
+    <div class="flag"><span class="k">F1</span><p><b>Derived page ground #011A40.</b> Deep Cobalt (#003070) pulled ~45% toward black for the base canvas, so photography and glowing points have headroom. Deep Cobalt itself is kept for the footer and CTA. Not one of the nine swatches — needs approval or a 10th swatch.</p></div>
+    <div class="flag"><span class="k">F2</span><p><b>Display face: Chakra Petch.</b> Selected for its chamfered square geometry matching the wordmark. Body IBM Plex Sans, data IBM Plex Mono. The presentation's exact faces were not confirmable from the PDF; this pairing should be ratified or swapped.</p></div>
+    <div class="flag"><span class="k">F3</span><p><b>Outline → half → solid type grammar.</b> Introduced as meaning: unbuilt / rising / as-built. Proposed as a permanent device for FORM / BUILT / CAPTURED everywhere.</p></div>
+    <div class="flag"><span class="k">F4</span><p><b>Italic colour rule.</b> Yellow italic = commercial/emotional; Sky Current italic = technology. Formalised from the brief.</p></div>
+    <div class="flag"><span class="k">F5</span><p><b>Point-cloud height ramp</b> (Deep Cobalt → Signal Mist) and "only CAPTURED reaches Signal Mist" — proposed as the standard digitisation ramp.</p></div>
+    <div class="flag"><span class="k">F6</span><p><b>Yellow issue marker</b>: a 6px rotated square in a 14px frame with leader line and mono label FLAGGED / CONFIRMED / RECORDED.</p></div>
+    <div class="flag"><span class="k">F7</span><p><b>Logo on dark.</b> The SB.1 light-on-dark lockup was cut from its Azure Grey square to a transparent PNG (no recolour, no effects) so it sits on the cobalt ground. Final should come from vector masters.</p></div>
+    <div class="flag"><span class="k">F8</span><p><b>Swatch 9 spelling.</b> The design system names it "Acent Yellow" — typo for "Accent Yellow". This sheet uses the corrected spelling.</p></div>
+    <div class="flag"><span class="k">F9</span><p><b>Copy / compliance.</b> The presentation's "Exclusive ANZ partner" credential was retitled "Real Horizons partner" and all copy reads "delivered in partnership with Real Horizons spatial technology". The word "exclusive" does not appear. No forecast, valuation, ROI, use-of-funds or round terms appear.</p></div>
+    <div class="flag"><span class="k">F10</span><p><b>FAQ content.</b> The brief asks for six FAQs but no FAQ copy was supplied. The six answers are composed strictly from presentation facts (agents, surveyors, integration, data ownership, scan cadence, site team). Please confirm or supply final questions.</p></div>
+    <div class="flag"><span class="k">F11</span><p><b>Problem section.</b> The "$500k–$2m display suites" and "six separate systems" facts from the presentation's p.3 are folded into a single kicker line rather than a second card grid, keeping the hook shallow.</p></div>
+    <div class="flag"><span class="k">F12</span><p><b>Imagery</b> is taken from the presentation (AI-generated) and labelled "Illustrative" wherever it appears. The hero/story canvases are a procedural tower, not a real project; readouts say "TP-01 · ILLUSTRATIVE".</p></div>
+  </section>
+</div>
+</body>
+</html>

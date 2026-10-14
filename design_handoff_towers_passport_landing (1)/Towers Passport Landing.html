@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Towers Passport · Multi-level Residential | ScanBuild1</title>
+<meta name="description" content="The all-in-one spatial sales, construction-capture and handover partner for multi-level residential developers. Delivered in partnership with Real Horizons spatial technology.">
+<meta property="og:title" content="Towers Passport · Multi-level Residential">
+<meta property="og:description" content="Every tower, sold and built in one spatial story.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ScanBuild1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Towers Passport · Multi-level Residential">
+<meta name="twitter:description" content="Every tower, sold and built in one spatial story.">
+<meta name="twitter:image" content="assets/img/liability.jpg">
+<meta property="og:image" content="assets/img/liability.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="893">
+<meta name="theme-color" content="#011A40">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tp.css?v=22">
+<script>
+  // Progressive enhancement: content is complete without JS. Motion only if allowed.
+  (function(){
+    var h = document.documentElement; h.classList.add('js');
+    var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!rm && !!document.createElement('canvas').getContext) h.classList.add('motion');
+    h.dataset.hero = '3d';
+  })();
+  window.TP_TWEAKS = /*EDITMODE-BEGIN*/{
+  "hero": "3d",
+  "density": 3,
+  "story": "b"
+}/*EDITMODE-END*/;
+</script>
+</head>
+<body>
+
+<div class="rail" aria-hidden="true"><i></i></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ScanBuild1 — Towers Passport">
+      <img src="assets/sb1-lockup-yellow.png" alt="ScanBuild1">
+      <span class="tp">TOWERS PASSPORT</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#story">The story</a>
+      <a href="#program">Program</a>
+      <a href="#reframe">Reframe</a>
+      <a href="#investment">Investment</a>
+      <a href="#pilot">Pilot</a>
+    </nav>
+    <a class="btn btn-primary" href="#demo">Book a live demo</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="Hero">
+  <div class="hero-media">
+    <img src="assets/img/hero-tower.jpg" alt="Gold Coast residential tower at dusk, its crown dissolving into a blue point cloud with a yellow scan line" fetchpriority="high">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <canvas id="hero3d" aria-hidden="true"></canvas>
+    <div class="h3d-layer" id="h3dLayer" aria-hidden="true"></div>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="hero-readout" id="heroReadout" aria-hidden="true">MODEL <b>TP-01</b></div>
+  <div class="wrap hero-inner">
+    <div class="badge"><span class="dot"></span>Towers Passport · Multi-level residential</div>
+    <h1>Every tower, <span class="outline">sold</span> and built in <em class="y">one spatial story.</em></h1>
+    <p class="lede">The all-in-one spatial sales, construction-capture and handover partner for multi-level residential developers.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#demo">Book a live demo <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="#story">See one model, three stages</a>
+    </div>
+    <div class="hero-meta">
+      <span>FORM → BUILT → CAPTURED</span> · Delivered in partnership with Real Horizons spatial technology · 50% Aboriginal-owned · Gold Coast, Queensland
+    </div>
+  </div>
+  <div class="hero-hint" aria-hidden="true">Move across the model to explore</div>
+  <div class="h3d-ui" id="h3dUI" role="group" aria-label="Tower view">
+    <button type="button" data-v="solid" aria-pressed="true">As-built</button>
+    <button type="button" data-v="splat" aria-pressed="false">Splat</button>
+  </div>
+  <div class="h3d-cue" aria-hidden="true"><span class="dot"></span>Interactive 3D · swipe sideways to turn · tap a yellow pin</div>
+</section>
+
+<!-- ============ SPATIAL STORY ============ -->
+<section class="story" id="story" data-screen-label="Spatial story">
+  <div class="story-track" id="storyTrack">
+    <div class="story-pin">
+      <div class="wrap">
+        <div class="story-head">
+          <div>
+            <p class="eyebrow">The spatial story</p>
+            <h2>One model. <em class="b">Three stages.</em></h2>
+          </div>
+          <p class="sub">Each stage builds on the same digital model — nothing is recreated, nothing is lost.</p>
+        </div>
+        <div class="story-stage">
+          <img src="assets/img/three-stages.jpg" alt="The same tower shown three ways: as a design model, as a construction scan, and as a finished digital twin" loading="lazy">
+          <canvas id="storyCanvas" aria-hidden="true"></canvas>
+          <div class="story-img" aria-hidden="true">
+            <div class="si-col">
+              <div class="si-base"></div>
+              <div class="si-ghost"><img src="assets/img/three-stages.jpg" alt="" style="--sx:-12.5%"></div>
+              <div class="si-layer" data-i="0"><img src="assets/img/three-stages.jpg" alt="" style="--sx:-12.5%"></div>
+              <div class="si-layer" data-i="1"><img src="assets/img/three-stages.jpg" alt="" style="--sx:-98%"></div>
+              <div class="si-layer" data-i="2"><img src="assets/img/three-stages.jpg" alt="" style="--sx:-184%"></div>
+              <i class="si-bar"></i><span class="si-tag">DESIGN RISING · 000%</span>
+            </div>
+          </div>
+          <div class="story-readout" id="storyReadout" aria-hidden="true">MODE <b>FORM</b></div>
+        </div>
+        <ol class="story-steps">
+          <li class="story-step active">
+            <span class="bar"></span>
+            <div class="row"><span class="nm outline">FORM</span><span class="st">Stage 1 · Launch</span></div>
+            <p>Sell the vision — an interactive digital sales suite, live before ground-breaking.</p>
+          </li>
+          <li class="story-step">
+            <span class="bar"></span>
+            <div class="row"><span class="nm half">BUILT</span><span class="st">Stage 2 · Construction</span></div>
+            <p>Prove progress — verified interval scans, compared against the design.</p>
+          </li>
+          <li class="story-step">
+            <span class="bar"></span>
+            <div class="row"><span class="nm solid">CAPTURED</span><span class="st">Stage 3 · Handover &amp; beyond</span></div>
+            <p>Hand over the finished-building digital twin to owners and the body corporate.</p>
+          </li>
+        </ol>
+        <p class="story-note">Each stage builds on the same digital model — nothing is recreated, nothing is lost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 PROBLEM ============ -->
+<section class="sec" id="problem" data-screen-label="01 Problem">
+  <div class="wrap problem-grid">
+    <div>
+      <p class="eyebrow"><b>01</b> · The problem</p>
+      <h2>Your bank won't fund what your buyers <em class="y">can't see.</em></h2>
+      <div class="stats">
+        <div class="stat"><div class="n y">100–120%</div><div class="c">of construction debt must be covered by qualifying presales before major banks fund the build.</div></div>
+        <div class="stat"><div class="n">2–3 yrs</div><div class="c">between a buyer's deposit and settlement, with almost no visibility of what they bought.</div></div>
+        <div class="stat"><div class="n">12–18%</div><div class="c">of 2025 off-the-plan settlements in Melbourne and Brisbane came in with a valuation shortfall.</div></div>
+      </div>
+      <p class="kicker">Meanwhile, $500k–$2m display suites are demolished when the campaign ends — and the typical construction firm runs <em>six separate systems.</em></p>
+      <p class="source">Sources: Feasly, off-the-plan presales guide; Opteon Solutions, off-the-plan buyer insights (2025); Deloitte, State of Digital Adoption in Construction 2026.</p>
+    </div>
+    <div class="problem-media">
+      <img src="assets/img/problem-site.jpg" alt="Night construction site with a tower crane and a wireframe of the unbuilt tower" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 PROGRAM ============ -->
+<section class="sec program" id="program" data-screen-label="02 Program">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><b>02</b> · The program</p>
+      <h2>One partner, one program, the <em class="y">whole life of the tower.</em></h2>
+    </div>
+    <div class="cards3">
+      <article class="pcard">
+        <div class="img"><img src="assets/img/form-suite.jpg" alt="Buyer exploring a 3D tower on a large touchscreen" loading="lazy"></div>
+        <div class="body">
+          <span class="stg"><b>Stage 1</b> · Launch</span>
+          <h3 class="outline">FORM</h3>
+          <p class="tag">Sell the tower before it exists.</p>
+          <ul>
+            <li>A photoreal, explorable 3D tower built from your architects' CAD and BIM — in any browser, tablet or display screen.</li>
+            <li>Live availability, filtered by level, orientation, bedrooms and price.</li>
+            <li>Furnished walkthroughs and the real view from every level.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="img"><img src="assets/img/built-scan.jpg" alt="Tower under construction overlaid with a blue scan mesh and yellow scan ring" loading="lazy"></div>
+        <div class="body">
+          <span class="stg"><b>Stage 2</b> · Construction</span>
+          <h3 class="half">BUILT</h3>
+          <p class="tag">Prove progress as it rises.</p>
+          <ul>
+            <li>Interval laser and camera scans — fortnightly, monthly or by milestone.</li>
+            <li>Design vs. reality — your CAD/BIM over each scan, with AI-assisted issue flagging confirmed by qualified people.</li>
+            <li>Buyer progress updates that keep purchasers confident from deposit to settlement.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="img"><img src="assets/img/captured-twin.jpg" alt="Completed coastal tower with a translucent digital-twin volume" loading="lazy"></div>
+        <div class="body">
+          <span class="stg"><b>Stage 3</b> · Handover &amp; beyond</span>
+          <h3 class="solid">CAPTURED</h3>
+          <p class="tag">Hand over a building that knows itself.</p>
+          <ul>
+            <li>A complete as-built capture — LiDAR, Gaussian splat and drone — including hidden services recorded during construction.</li>
+            <li>Real, walkable tours of finished apartments for remaining stock and resales.</li>
+            <li>A digital handover pack for owners, the body corporate and the facility manager.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <p class="continuity">Outline → solid: the same model, from design to as-built.</p>
+  </div>
+</section>
+
+
+<!-- ============ PREMIUM ADD-ON · REFRAME ============ -->
+<section class="sec reframe" id="reframe" data-screen-label="Reframe add-on">
+  <div class="wrap">
+    <div class="rf-head">
+      <div>
+        <p class="eyebrow"><b>+</b> · Premium add-on · Reframe</p>
+        <h2>Restyle any room with <em class="y">a sentence.</em></h2>
+      </div>
+      <div class="rf-copy">
+        <p>AI virtual staging applied to the real 3D capture. Materials, furniture, lighting and mood change — <strong>the room's geometry stays true.</strong></p>
+        <p>Show buyers finish options, furnished and unfurnished, with a before/after slider — for display units, remaining stock and resales.</p>
+      </div>
+    </div>
+
+    <div class="rf-stage" id="rfStage">
+      <div class="rf-prompt" aria-hidden="true"><span class="k">REFRAME</span><span class="t" id="rfType">Furnish as coastal luxury — warm oak, linen, dusk light</span><span class="cur"></span></div>
+      <div class="rf-frame">
+        <img class="rf-static" src="assets/img/reframe-slide.jpg" alt="The same apartment shown as a bare concrete shell on the left and fully furnished on the right, split by a yellow line, looking out over the Gold Coast coastline">
+        <div class="rf-after"><img src="assets/img/reframe-after.jpg?v=3" alt=""></div>
+        <div class="rf-before"><img src="assets/img/reframe-before.jpg?v=3" alt=""><i class="rf-scan"></i></div>
+        <div class="rf-line"><i class="rf-knob"><span>‹</span><span>›</span></i></div>
+        <span class="rf-tag l">As captured · bare shell</span>
+        <span class="rf-tag r">Reframed · AI staging</span>
+        <span class="rf-geo" aria-hidden="true">GEOMETRY LOCKED · SAME SCAN</span>
+        <input class="rf-range" id="rfRange" type="range" min="0" max="100" value="50" aria-label="Before and after slider: drag to compare the bare shell with the AI-staged room">
+      </div>
+      <p class="rf-hint">Move across the room to reframe it</p>
+    </div>
+
+    <div class="rf-foot">
+      <div class="rf-stat"><div class="n y">83%</div><div class="c">of buyers' agents say staging makes it easier for buyers to picture the property as their future home.</div></div>
+      <ul class="rf-uses tiles">
+        <li class="lift"><b>Display units</b><span>Every finish option, without building one</span></li>
+        <li class="lift"><b>Remaining stock</b><span>Furnished or unfurnished, on demand</span></li>
+        <li class="lift"><b>Resales</b><span>Restyle the real capture, years on</span></li>
+      </ul>
+    </div>
+    <p class="source">Source: National Association of Realtors, 2025 Profile of Home Staging.</p>
+  </div>
+</section>
+
+<!-- ============ 03 WHY NOW ============ -->
+<section class="sec" id="why-now" data-screen-label="03 Why now">
+  <div class="wrap">
+    <div class="now-head">
+      <div class="sec-head">
+        <p class="eyebrow"><b>03</b> · Why now</p>
+        <h2>Past early adoption. <em class="b">Before saturation.</em></h2>
+        <p class="lede">Gaussian splatting rebuilds real places in photoreal 3D — streamed as a walkable, to-scale model in any web browser. And Australia's property portals have gone spatial.</p>
+      </div>
+      <figure class="now-media">
+        <img src="assets/img/gaussian.jpg" alt="Photos and camera positions converging into a cloud of soft 3D points that resolves into a photoreal apartment interior" loading="lazy">
+        <figcaption><span>Photos</span><span>Splats</span><span>Photoreal 3D</span></figcaption>
+      </figure>
+    </div>
+    <div class="lanes" id="nowLanes">
+      <div>
+        <div class="lane-t">The technology</div>
+        <ol class="tl" data-tl>
+          <li><div class="d">2023 · Breakthrough</div><div class="w">Published at SIGGRAPH by Inria</div></li>
+          <li><div class="d">2024–25 · Proof</div><div class="w">Quality, file size and speed leap forward</div></li>
+          <li><div class="d">2026 · Standard</div><div class="w">Khronos glTF splat extension; Niantic SPZ 4</div></li>
+          <li class="now"><div class="d">Now · Commercial</div><div class="w">Stable, proven — and not yet crowded</div></li>
+        </ol>
+      </div>
+      <div>
+        <div class="lane-t">The portals</div>
+        <ol class="tl" data-tl>
+          <li><div class="d">Feb 2025</div><div class="w">CoStar completes its US$1.6 billion acquisition of Matterport</div></li>
+          <li><div class="d">Aug 2025</div><div class="w">CoStar completes its acquisition of Domain</div></li>
+          <li><div class="d">Oct 2025</div><div class="w">REA Group buys 61.5% of iGUIDE</div><div class="x">— while fewer than 5% of listings carry a 3D tour.</div></li>
+          <li class="now"><div class="d">Jul 2026</div><div class="w">Domain rolls out Matterport 3D across 1,700+ suburbs</div><div class="x">— Gold Coast included.</div></li>
+        </ol>
+      </div>
+    </div>
+    <p class="source">Sources: Inria (2023); Khronos Group (Feb 2026); Niantic Spatial, SPZ 4; SEC filing; Matterport; CoStar Group; Elite Agent (Oct 2025, Apr 2026); Online Marketplaces.</p>
+
+    <div class="statement">
+      <p class="st-a">Buyers will expect <span class="solid">3D by default.</span></p>
+      <p class="st-b">An off-the-plan tower can't be scanned <span class="outline">until it's built</span> — <em>unless it has a Towers Passport.</em></p>
+    </div>
+  </div>
+
+  <div class="gc">
+    <div class="gc-bg"><img src="assets/img/gold-coast-night.jpg" alt="Gold Coast skyline at night with tower cranes on residential high-rises" loading="lazy"></div>
+    <div class="wrap gc-in">
+      <p class="eyebrow">The market · Australia is building upward</p>
+      <h3>The Gold Coast is building upward — <em class="y">faster than anywhere in Queensland.</em></h3>
+      <div class="cranes tiles">
+        <div class="lift"><div class="n">896</div><div class="c">cranes on Australian skylines — a national record</div></div>
+        <div class="lift"><div class="n y">82</div><div class="c">on the Gold Coast — now ahead of Brisbane's 80</div></div>
+        <div class="lift"><div class="n">88%</div><div class="c">of Gold Coast cranes are on residential projects</div></div>
+        <div class="lift"><div class="n">+13.2%</div><div class="c">apartment and townhouse activity, 2025–26</div></div>
+      </div>
+      <p class="source">Source: Rider Levett Bucknall Crane Index, Australia Q3 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 FOR THE DEVELOPER ============ -->
+<section class="sec" id="developer" data-screen-label="04 For the developer">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><b>04</b> · For the developer</p>
+      <h2>Sell faster. Fund sooner. <em class="y">Protect the asset.</em></h2>
+    </div>
+    <div class="outcomes">
+      <div class="outcome lift"><span class="i">A · PRESALES</span><h3>Reach presale hurdles sooner</h3><p>A sales suite live before ground-breaking, open 24/7 to local, interstate and overseas buyers.</p></div>
+      <div class="outcome lift"><span class="i">B · CAPEX</span><h3>Spend less on bricks and mortar</h3><p>Replace much of a seven-figure display-suite budget with a digital suite that never closes.</p></div>
+      <div class="outcome lift"><span class="i">C · SETTLEMENT</span><h3>Hold buyers to settlement</h3><p>Regular, branded progress updates keep purchasers engaged through a 2–3 year build.</p></div>
+      <div class="outcome lift"><span class="i">D · LIABILITY</span><h3>Shift liability where it belongs</h3><p>A time-stamped spatial record for every warranty, defect or insurance conversation.</p></div>
+    </div>
+    <p class="kicker">And show your financiers presale evidence they can see — <em>not just a spreadsheet.</em></p>
+
+  </div>
+
+  <!-- Stage 2 · Built · Liability — interval slices -->
+  <div class="lia" id="liability">
+    <div class="wrap lia-copy">
+      <p class="eyebrow">Stage 2 · Built · Liability</p>
+      <h3>Evidence that sends every defect back to <em>the party responsible.</em></h3>
+      <p>Photoreal, LiDAR-accurate snapshots of the whole building at the intervals you choose — pre-formwork, pre-plumbing, pre-gyprock, pre-fit-off. When a claim arrives, you have a fixed point of reference instead of a dispute.</p>
+    </div>
+    <div class="lia-stage">
+      <div class="lia-frame">
+        <img src="assets/img/liability.jpg" alt="One bathroom shown as four layered scan slices: concrete and formwork, plumbing, framing and conduit, and the finished room" loading="lazy">
+        <div class="slice" data-i="0" style="--clip:polygon(50.6% 19.5%, 60.6% 17.6%, 61.6% 78.2%, 51.6% 75.6%)"><div class="cut"><img src="assets/img/liability.jpg" alt=""></div><i class="sweep"></i></div>
+        <div class="slice" data-i="1" style="--clip:polygon(60.6% 17.6%, 69.8% 15.4%, 70.8% 81.4%, 61.6% 78.2%)"><div class="cut"><img src="assets/img/liability.jpg" alt=""></div><i class="sweep"></i></div>
+        <div class="slice" data-i="2" style="--clip:polygon(69.8% 15.4%, 79.5% 13%, 80.6% 85.6%, 70.8% 81.4%)"><div class="cut"><img src="assets/img/liability.jpg" alt=""></div><i class="sweep"></i></div>
+        <div class="slice" data-i="3" style="--clip:polygon(79.5% 13%, 96.6% 22%, 96.6% 73%, 80.6% 85.6%)"><div class="cut"><img src="assets/img/liability.jpg" alt=""></div><i class="sweep"></i></div>
+        <i class="lead" data-i="0" style="--x:55.6%;--h:9.5%"></i><i class="datum"></i><span class="pin" data-i="0" style="--x:55.6%"><b>01</b><span>Pre-formwork</span></span>
+        <i class="lead" data-i="1" style="--x:65.2%;--h:7.6%"></i><span class="pin" data-i="1" style="--x:65.2%"><b>02</b><span>Pre-plumbing</span></span>
+        <i class="lead" data-i="2" style="--x:74.6%;--h:5.4%"></i><span class="pin" data-i="2" style="--x:74.6%"><b>03</b><span>Pre-gyprock</span></span>
+        <i class="lead" data-i="3" style="--x:88%;--h:7.5%"></i><span class="pin" data-i="3" style="--x:88%"><b>04</b><span>Pre-fit-off</span></span>
+      </div>
+      <div class="lia-readout" id="liaReadout" aria-hidden="true">SCAN <b>01 / 04</b><br>RECORD <b>LIDAR · SPLAT</b><br>STATE <span>TIME-STAMPED</span></div>
+    </div>
+    <div class="wrap">
+      <div class="lia-tabs" role="group" aria-label="Construction scan intervals">
+        <button type="button" data-i="0"><b>01</b><span>Pre-formwork</span><small>Structure, before it's poured over</small></button>
+        <button type="button" data-i="1"><b>02</b><span>Pre-plumbing</span><small>Services, before they're sealed in</small></button>
+        <button type="button" data-i="2"><b>03</b><span>Pre-gyprock</span><small>Framing and conduit, before linings</small></button>
+        <button type="button" data-i="3"><b>04</b><span>Pre-fit-off</span><small>The room, as handed over</small></button>
+      </div>
+      <div class="proof-in">
+        <div class="proof-head">
+          <p class="eyebrow">The defect record · Queensland</p>
+          <h3>Defects are common, costly and long-tailed — <em>so your evidence has to be too.</em></h3>
+        </div>
+        <div class="proof-nums tiles">
+          <div class="lift"><div class="n">5,771</div><div class="c">defective building work complaints to the QBCC in a single year (FY24–25)</div></div>
+          <div class="lift"><div class="n y">71%</div><div class="c">of audited Queensland apartment buildings had at least one defect — 12 on average</div></div>
+          <div class="lift"><div class="n">$27m</div><div class="c">in defect claims approved under the Qld Home Warranty Scheme (FY25–26)</div></div>
+          <div class="lift"><div class="n">6y 6m</div><div class="c">structural defect cover in Queensland — the record has to last that long</div></div>
+        </div>
+        <p class="source">Sources: QBCC annual report 2024–25 and 2025–26 release; Johnston &amp; Reid, Deakin/Griffith (2019); QBCC Home Warranty fact sheet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 WHY SCANBUILD1 ============ -->
+<section class="sec why" id="why" data-screen-label="05 Why ScanBuild1">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><b>05</b> · Why ScanBuild1</p>
+      <h2>Specialists everywhere. An all-in-one partner nowhere — <em class="y">until now.</em></h2>
+    </div>
+    <div class="cmp" role="table" aria-label="Provider comparison">
+      <div class="cmp-h" role="row"><span role="columnheader">Provider type</span><span role="columnheader">Sales</span><span role="columnheader">Construction</span><span role="columnheader">Handover</span></div>
+      <div class="cmp-r" role="row"><div class="p" role="rowheader">Renders &amp; visualisation studios</div><div class="cells"><div class="cell" role="cell"><span class="l">Sales</span><span class="v yes">Yes</span></div><div class="cell" role="cell"><span class="l">Construction</span><span class="v no">—</span></div><div class="cell" role="cell"><span class="l">Handover</span><span class="v no">—</span></div></div></div>
+      <div class="cmp-r" role="row"><div class="p" role="rowheader">Virtual tours &amp; scanning</div><div class="cells"><div class="cell" role="cell"><span class="l">Sales</span><span class="v part">Partial</span></div><div class="cell" role="cell"><span class="l">Construction</span><span class="v part">Partial</span></div><div class="cell" role="cell"><span class="l">Handover</span><span class="v part">Partial</span></div></div></div>
+      <div class="cmp-r" role="row"><div class="p" role="rowheader">Construction progress tech</div><div class="cells"><div class="cell" role="cell"><span class="l">Sales</span><span class="v no">—</span></div><div class="cell" role="cell"><span class="l">Construction</span><span class="v yes">Yes</span></div><div class="cell" role="cell"><span class="l">Handover</span><span class="v part">Partial</span></div></div></div>
+      <div class="cmp-r" role="row"><div class="p" role="rowheader">Project marketing agencies</div><div class="cells"><div class="cell" role="cell"><span class="l">Sales</span><span class="v yes">Yes</span></div><div class="cell" role="cell"><span class="l">Construction</span><span class="v no">—</span></div><div class="cell" role="cell"><span class="l">Handover</span><span class="v no">—</span></div></div></div>
+      <div class="cmp-r answer" role="row"><div class="p" role="rowheader">ScanBuild1 · Towers Passport<small>One partner · one model</small></div><div class="cells"><div class="cell" role="cell"><span class="l">Sales</span><span class="v">Yes</span></div><div class="cell" role="cell"><span class="l">Construction</span><span class="v">Yes</span></div><div class="cell" role="cell"><span class="l">Handover</span><span class="v">Yes</span></div></div></div>
+    </div>
+
+    <div class="creds tiles">
+      <div class="cred lift"><h3>Builder-led</h3><p>Licensed building inspection and trade expertise behind every scan — on your site, not offshore.</p></div>
+      <div class="cred lift"><h3>Real Horizons partner</h3><p>Delivered in partnership with Real Horizons spatial technology.</p></div>
+      <div class="cred lift"><h3>50% Aboriginal-owned</h3><p>Supply Nation registered — supports your Indigenous procurement and governance targets.</p></div>
+      <div class="cred lift"><h3>Partner-led pricing</h3><p>We share your sales risk and reward — aligned to your one outcome.</p></div>
+    </div>
+
+    <div class="integ-wrap" style="margin-top:56px">
+      <div>
+        <p class="integ-h">Integration</p>
+        <h3>Plugs into the systems you <em class="b">already run.</em></h3>
+      </div>
+      <div class="integ">
+        <div><span class="k">IN</span><span class="t">CAD/BIM files and any capture source — LiDAR, 360, drone, DSLR, phone or existing scans.</span></div>
+        <div><span class="k">SHARE</span><span class="t">One-line embeds and share links for your website, CRM, sales screens and buyer emails.</span></div>
+        <div><span class="k">EXPORT</span><span class="t">Open 3D formats (SPZ, PLY, GLB) aligned with the new glTF splat standard — your data stays yours.</span></div>
+        <div><span class="k">WORKFLOW</span><span class="t">Simple, scoped workflows alongside Procore, Autodesk Construction Cloud and your project tools.</span></div>
+      </div>
+    </div>
+    <p class="source">Commonwealth Indigenous Procurement Policy target rose to 3% from 1 July 2025, stepping toward 4% (NIAA).</p>
+  </div>
+</section>
+
+<!-- ============ 06 INVESTMENT ============ -->
+<section class="sec" id="investment" data-screen-label="06 Investment">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><b>06</b> · Investment</p>
+      <h2>Low upfront. Cost-covered. <em class="y">Most of our fee is earned only when you sell.</em></h2>
+    </div>
+    <div class="inv-grid">
+      <div>
+        <ol class="layers tiles">
+          <li class="layer l1 lift">
+            <span class="lt"><b>Layer 1</b> · On signing</span>
+            <h3>Deposit</h3>
+            <p>Funds platform set-up and first production. Your tower starts cash-funded.</p>
+            <div class="amt" id="amtDep">$75k<small>one-off</small></div>
+          </li>
+          <li class="layer l2 lift">
+            <span class="lt"><b>Layer 2</b> · Monthly</span>
+            <h3>Retainer</h3>
+            <p>Covers delivery across all three stages, from launch to six months after completion.</p>
+            <div class="amt" id="amtRet">$13k / month<small id="amtRetN">× 49 months</small></div>
+          </li>
+          <li class="layer l3 lift">
+            <span class="lt"><b>Layer 3</b> · As you sell</span>
+            <h3>Success fee</h3>
+            <p>0.5% of apartment sales — half at exchange, half at settlement.</p>
+            <div class="amt">0.5%<small>of sales</small></div>
+          </li>
+        </ol>
+        <div class="mix" aria-hidden="true">
+          <div class="mix-bar"><i class="a" id="mixA" style="flex-basis:3.5%"></i><i class="b" id="mixB" style="flex-basis:29.6%"></i><i class="c" id="mixC" style="flex-basis:66.5%"></i></div>
+          <div class="mix-l"><span class="a" id="mixLA">Deposit 3%</span><span class="b" id="mixLB">Retainer 30%</span><span class="c" id="mixLC">Success fee 67%</span></div>
+        </div>
+        <p class="inv-note">Showing <span id="invClass">Mid-rise</span>. <span id="amtFeeN">≈ $1.43m · $2.15m total · 0.72% of sales</span>.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:16px">Every class of tower, one program — <em class="b">always under 1% of sales value.</em></h3>
+        <div class="seg" role="group" aria-label="Tower class">
+          <button type="button" data-k="boutique" aria-pressed="false">Boutique</button>
+          <button type="button" data-k="mid" aria-pressed="true">Mid-rise</button>
+          <button type="button" data-k="high" aria-pressed="false">High-rise</button>
+        </div>
+        <div class="classes">
+          <div class="lbls" aria-hidden="true">
+            <div>Example tower</div><div>Sales value</div><div>Deposit on signing</div><div>Monthly retainer</div><div>Success fee · 0.5%</div><div>Total program fee</div><div>Share of sales value</div>
+          </div>
+          <div class="ccard" data-k="boutique">
+            <div class="ch">Boutique<small>3–13 storeys</small></div>
+            <dl>
+              <div><dt>Example tower</dt><dd>60 × $1.2m</dd></div>
+              <div><dt>Sales value</dt><dd>$72m</dd></div>
+              <div><dt>Deposit on signing</dt><dd>$30k</dd></div>
+              <div><dt>Monthly retainer</dt><dd>$6k × 34 mo</dd></div>
+              <div><dt>Success fee · 0.5%</dt><dd>$0.34m</dd></div>
+              <div class="tot"><dt>Total program fee</dt><dd>$0.59m</dd></div>
+              <div class="shr"><dt>Share of sales value</dt><dd>0.82%</dd></div>
+            </dl>
+          </div>
+          <div class="ccard sel" data-k="mid">
+            <div class="ch">Mid-rise<small>13–33 storeys</small></div>
+            <dl>
+              <div><dt>Example tower</dt><dd>200 × $1.5m</dd></div>
+              <div><dt>Sales value</dt><dd>$300m</dd></div>
+              <div><dt>Deposit on signing</dt><dd>$75k</dd></div>
+              <div><dt>Monthly retainer</dt><dd>$13k × 49 mo</dd></div>
+              <div><dt>Success fee · 0.5%</dt><dd>$1.43m</dd></div>
+              <div class="tot"><dt>Total program fee</dt><dd>$2.15m</dd></div>
+              <div class="shr"><dt>Share of sales value</dt><dd>0.72%</dd></div>
+            </dl>
+          </div>
+          <div class="ccard" data-k="high">
+            <div class="ch">High-rise<small>33–100 storeys</small></div>
+            <dl>
+              <div><dt>Example tower</dt><dd>450 × $1.8m</dd></div>
+              <div><dt>Sales value</dt><dd>$810m</dd></div>
+              <div><dt>Deposit on signing</dt><dd>$125k</dd></div>
+              <div><dt>Monthly retainer</dt><dd>$18k × 64 mo</dd></div>
+              <div><dt>Success fee · 0.5%</dt><dd>$3.85m</dd></div>
+              <div class="tot"><dt>Total program fee</dt><dd>$5.11m</dd></div>
+              <div class="shr"><dt>Share of sales value</dt><dd>0.63%</dd></div>
+            </dl>
+          </div>
+        </div>
+        <p class="inv-note">AUD excl. GST. Example towers for illustration. Retainer runs from launch to six months after practical completion. Most of the fee is earned only as apartments sell.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 PILOT ============ -->
+<section class="sec pilot" id="pilot" data-screen-label="07 Founding pilot">
+  <div class="pilot-bg"><img src="assets/img/pilot-towers.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <p class="eyebrow"><b>07</b> · Founding pilot program</p>
+    <h2>Two founding partners. Half the success fee. <em class="y">Locked in.</em></h2>
+    <div class="pnums tiles">
+      <div class="lift"><div class="n">2</div><div class="c">founding developer places only</div></div>
+      <div class="lift"><div class="n y">0.25%</div><div class="c">success fee, instead of the standard 0.5%</div></div>
+      <div class="lift"><div class="n">2–3</div><div class="c">named sites locked at the pilot rate</div></div>
+    </div>
+    <div class="pilot-give">
+      <div class="t">In return, founding partners give us</div>
+      <p>Site access and agreed milestones · documented feedback · approved case-study rights · a reference conversation after delivery.</p>
+    </div>
+    <p class="pilot-close">Founding places close once both are signed — <em>target mid-February 2027.</em></p>
+  </div>
+</section>
+
+<!-- ============ 08 FAQ ============ -->
+<section class="sec" id="faq" data-screen-label="08 Straight answers">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><b>08</b> · Straight answers</p>
+      <h2>A few <em class="b">practical details.</em></h2>
+    </div>
+    <div class="faq">
+      <div class="qa lift"><h3><span>01</span>Do you replace our selling agents?</h3><p>No. We sharpen your agents' edge — campaign-ready assets, share links and lead briefs. Negotiation and buyer relationships stay with your agents.</p></div>
+      <div class="qa lift"><h3><span>02</span>Do our surveyors and consultants stay?</h3><p>Yes. Your licensed surveyors stay. Architects, engineers and builders all work from the same visual record.</p></div>
+      <div class="qa lift"><h3><span>03</span>What does our team need to install?</h3><p>Nothing new to learn. Share links and website embeds work on any device — no apps, no downloads — alongside Procore, Autodesk Construction Cloud and your project tools.</p></div>
+      <div class="qa lift"><h3><span>04</span>Who owns the data?</h3><p>You do. Exports are in open 3D formats (SPZ, PLY, GLB) aligned with the glTF splat standard.</p></div>
+      <div class="qa lift"><h3><span>05</span>How often do you scan during construction?</h3><p>At the cadence your project needs — fortnightly, monthly or by milestone: pre-formwork, pre-plumbing, pre-gyprock, pre-fit-off.</p></div>
+      <div class="qa lift"><h3><span>06</span>Who is on our site?</h3><p>A dedicated capture technician on a fixed cadence, with a licensed building professional's eye over every dataset. Inductions, safety systems and insurances in place.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 CTA ============ -->
+<section class="sec cta" id="demo" data-screen-label="09 Book a demo">
+  <div class="wrap">
+    <p class="eyebrow"><b>09</b> · Your next step</p>
+    <h2>Let's walk through your tower — <span class="outline">before it exists.</span></h2>
+    <div class="cta-grid">
+      <ol class="steps">
+        <li><span class="k">1</span><div><b>Live demo</b><span>of the platform, using a tower like yours.</span></div></li>
+        <li><span class="k">2</span><div><b>Launch-readiness review</b><span>of your project, drawings and timeline.</span></div></li>
+        <li><span class="k">3</span><div><b>Founding pilot agreement</b><span>— secure one of two places.</span></div></li>
+      </ol>
+      <div class="form book" id="bookPanel">
+        <h3>Book a live demo</h3>
+        <p class="fs">One hour · online or on site · Gold Coast based</p>
+        <div class="book-frame" id="bookFrame">
+          <div class="book-load" aria-hidden="true"><i></i><span>Loading available times…</span></div>
+          <div class="book-stuck"><p>The calendar is taking a moment to load.</p><a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/bookings/towers-passport-live-demo" target="_blank" rel="noopener" data-direct>Open the booking page <span class="arr">→</span></a></div>
+          <iframe data-src="https://api.leadconnectorhq.com/widget/booking/PydlAk7mIqZj3I7FTUKe" title="Book a Towers Passport live demo" allow="payment" scrolling="no" id="PydlAk7mIqZj3I7FTUKe_1791947268114" loading="lazy"></iframe>
+        </div>
+        <noscript><a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/bookings/towers-passport-live-demo" target="_blank" rel="noopener">Open the booking page <span class="arr">→</span></a></noscript>
+        <p class="fine">Trouble loading? <a href="https://api.leadconnectorhq.com/widget/bookings/towers-passport-live-demo" id="bookDirect" target="_blank" rel="noopener">Open the booking page</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" data-screen-label="Footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <img src="assets/sb1-lockup-yellow.png" alt="ScanBuild1">
+      <p class="line">From the first sale to the last strata meeting — <em>one spatial story.</em></p>
+      <div class="meta">ScanBuild1 · Built on Evidence<br>Gold Coast, Queensland<br><a href="Privacy Policy.html">Privacy Policy</a></div>
+    </div>
+    <div class="disc">
+      <span>Towers Passport is delivered in partnership with Real Horizons spatial technology. ScanBuild1 is 50% Aboriginal-owned and Supply Nation registered.</span>
+      <span>Fee examples are illustrative, in AUD excluding GST, and subject to a scoped agreement. Statistics are drawn from the third-party sources cited on this page.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" aria-hidden="false">
+  <div class="t"><b>2 founding places</b><br>Towers Passport pilot</div>
+  <a class="btn btn-primary" href="#demo">Book the demo</a>
+</div>
+
+<aside class="tweaks" aria-label="Tweaks">
+  <div class="th">Tweaks <button type="button" aria-label="Close">×</button></div>
+  <div class="tl2">Hero interaction</div>
+  <div class="opts">
+    <button type="button" data-hero="displace" aria-pressed="true">A · Displace</button>
+    <button type="button" data-hero="focus" aria-pressed="false">B · Focus lens</button>
+    <button type="button" data-hero="3d" aria-pressed="false" style="grid-column:1/-1">C · 3D tower (drag to orbit)</button>
+  </div>
+  <p class="rec">Locked: C · 3D tower. Story locked: B · Image riser.</p>
+  <div class="tl2">Point density <span id="twDensityV" style="float:right;color:var(--ice)">220%</span></div>
+  <input id="twDensity" type="range" min="1" max="3" step="0.1" value="2.2">
+  <div class="tl2">Spatial story</div>
+  <div class="opts">
+    <button type="button" data-story="a" aria-pressed="true">A · Point morph</button>
+    <button type="button" data-story="b" aria-pressed="false">B · Image riser</button>
+  </div>
+</aside>
+
+<script src="js/tower.js?v=22"></script>
+<script src="js/hero.js?v=22"></script>
+<script src="js/hero-3d.js?v=22"></script>
+<script src="js/story.js?v=22"></script>
+<script src="js/story-b.js?v=22"></script>
+<script src="js/reframe.js?v=22"></script>
+<script src="js/app.js?v=22"></script>
+</body>
+</html>
